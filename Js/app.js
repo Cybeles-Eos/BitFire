@@ -15,7 +15,7 @@ function sBtnsound(){
 function resetFightMusic(){
    fightMusic.play();
    fightMusic.currentTime = 0;
-   fightMusic.volume = 0.1;
+   fightMusic.volume = 0.4;
 }
 
 // Attack Btn 
@@ -136,7 +136,7 @@ function charChangeAppearanceIdle(char, sTime){
 // Main Function Of The Game :
 function userShot(){
    atckBtnSound.play();
-   atckBtnSound.volume = .3;
+   atckBtnSound.volume = .5;
    atckBtn.classList.add('turnEnd');
 
    //User Attack :
@@ -274,7 +274,7 @@ muteSound.addEventListener('click',()=>{
       setTimeout(() => {
          fightMusic.play();
          fightMusic.loop = true; 
-         fightMusic.volume = 0.1;
+         fightMusic.volume = 0.4;
       }, 100);
    }
 });
