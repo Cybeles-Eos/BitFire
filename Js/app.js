@@ -119,10 +119,6 @@ function characterAtck(charSkill, atckActive, fSt, sSt, skill, charHp){
       charSkill.style.width = skill.imgSizeEn; // For SkillEnd Size
 
       setTimeout(()=>{
-         if (navigator.vibrate) {
-            // Trigger a vibration pattern: 300ms of vibration
-            navigator.vibrate(300);
-         }
          charSkill.src = '';
          charSkill.classList.remove(`${atckActive}`);
       },200);
@@ -223,6 +219,9 @@ function userShot(){
 
    // Time For UserApp To Atck Button 🎫
    setTimeout(()=>{
+      if (navigator.vibrate) {
+         navigator.vibrate(200);
+      }
       atckBtn.style.opacity = 1;
       atckBtn.addEventListener('click', userShot);
       atckBtn.classList.remove('turnEnd');
