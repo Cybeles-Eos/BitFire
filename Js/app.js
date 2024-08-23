@@ -136,7 +136,7 @@ function charChangeAppearanceIdle(char, sTime){
 // Main Function Of The Game :
 function userShot(){
    atckBtnSound.play();
-   atckBtnSound.volume = .5;
+   atckBtnSound.volume = .9;
    atckBtn.classList.add('turnEnd');
 
    //User Attack :
