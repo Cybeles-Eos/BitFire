@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Styles/sideAds.css">
+   <link rel="stylesheet" href="Styles/btnsInfo.css">
+   <link rel="stylesheet" href="Styles/gameStart.css">
+   <link rel="stylesheet" href="Styles/game.css">
+   <title>BitFire</title>
+</head>
+<body>
+   <!--Main Game-->
+   <main>
+      <section class="main_screen">
+         <div class="gameField">
+           
+            <!-- User Character -->
+            <div class="characterUser">
+               <div class="uniHpBar">
+                  <div class="unihpIcon">
+                     <img class="hpIcon preventUnwanted" src="Images/hpPlus.png">
+                  </div>
+                  <div class="userHp"></div>
+               </div>
+               <div>
+
+               </div>
+               <div class="userCharCont">
+                  <img class="userchar preventUnwanted" src="Images/IdleTrunk.gif">
+                  <img class="userSkill" src="Images/">
+               </div>
+            </div>
+
+            <!-- Enemy Character -->
+            <div class="characterEnemy">
+               <div class="uniHpBar enymHpBar">
+                  <div class="enemyHp"></div>
+                  <div class="unihpIcon">
+                     <img class="hpIcon preventUnwanted" src="Images/hpPlus.png">
+                  </div>
+               </div>
+               <div class="userCharCont">
+                  <img class="enemychar preventUnwanted" src="Images/IdleTrunk.gif">
+                  <img class="enemySkill" src="Images/Bullet.png">
+               </div>
+            </div>
+
+            <div class="grass"></div>
+            <div class="gameStart">
+               <img id="gs-title" src="Images/BitFire.png" alt="">
+               <img class="bird" src="Images/BirdFly.gif">
+               <p id="startgameBtn">click to start</p>
+            </div>
+         </div>
+        
+      </section>
+
+      <div class="btnHolder">
+         <div class="scores-board">
+            <div class="win-textBox">
+               <p class="sb-text">Win : <span id="winCount">0</span></p>
+            </div>
+            <div class="setting">
+               <img src="Images/settings-4-fill.svg" class="settingIcon">
+            </div>
+            <div class="lose-textBox">
+               <p class="sb-text">Lose : <span id="loseCount">0</span></p>
+            </div>
+         </div>
+         <img class="btn" src="Images/SwordButton.png"></img>
+      </div>
+   </main>
+
+   <!-- Ads Section -->
+   <div class="sideAds sLeft"></div>
+   <div class="sideAds sRight"></div>
+
+   <!--Win and Lose Popup-->
+   <div class="win-box">
+      <p>You Win.</p>
+      <button id="winB-btn">Play again</button>
+   </div>
+   <div class="lose-box">
+      <p>You Lose.</p>
+      <button id="loseB-btn">Play again</button>
+   </div>
+
+   <!--Setting-->
+   <div class="setting-menus">
+      <button id="resetScore">Reset Score</button>
+      <button id="muteSound">Play Sound</button>
+   </div>
+
+   <!-- Audio Section -->
+   <audio id="startMusic">
+      <source src="Audio/Start OST - Snowdin Town.mp3" type="audio/ogg">
+   </audio>
+   <audio id="fightMusic">
+      <source src="Audio/Fight OST - Dating Fight!.mp3" type="audio/ogg">
+   </audio>
+   <audio id="hit">
+      <source src="Audio/hit.wav" type="audio/ogg">
+   </audio>
+   <audio id="atckbtn-sound">
+      <source src="Audio/matPunk.mp3" type="audio/ogg">
+   </audio>
+   <audio id="somebtn-sound">
+      <source src="Audio/Spop.mp3" type="audio/ogg">
+   </audio>
+</body>
+<script src="Js/app.js"></script>
+</html>

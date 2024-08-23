@@ -1,0 +1,71 @@
+@font-face {
+   font-family: bose;
+   src: url(../Font/AlfaSlabOne-Regular.ttf);
+}
+
+.gameStart{
+   position: absolute;
+   min-width: 500px;
+   height: 23rem;
+   background-image: url(../Images/StartGameBG.png);
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+   z-index: 1;
+   transition: all 1s;
+   /* display: none;  */
+}
+.starGame{
+   transform: translateY(-14.5rem);
+}
+#gs-title{
+   width: 12rem;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%); 
+   margin-top: 3rem;
+   user-select: none;
+   -webkit-tap-highlight-color: transparent;
+   -webkit-user-drag: none; 
+   
+}  
+.bird{
+   position: absolute;
+   width: 3.5rem;
+   right: 0; 
+   z-index: 22; 
+   bottom: 3.5rem;     
+   transform: translateX(29rem); 
+   animation: freeBird 6s linear infinite; 
+   user-select: none;
+   -webkit-tap-highlight-color: transparent;
+   -webkit-user-drag: none; 
+}   
+
+@keyframes freeBird {
+   to{
+      transform: translateX(-30rem) translateY(-7rem);
+   }
+}
+
+#startgameBtn{
+   position: absolute;
+   z-index: 3;
+   left: 50%;
+   transform: translateX(-50%);
+   margin-top: 11.8rem;
+   font-family: bose; 
+   font-size: 12px;  
+   color: #ffffff; 
+   letter-spacing: 4px; 
+   opacity: 0; 
+   animation: blinkText 600ms infinite;
+   user-select: none;
+
+}  
+
+@keyframes blinkText {
+   to{
+      opacity: 1;
+   }
+}
