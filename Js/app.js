@@ -72,7 +72,7 @@ updateScore();
 const skills = [
    {  
       name: 'Bullet',
-      damage: 8,
+      damage: 5,
       imgStart: 'Bullet.png',
       imgEnd: 'BulletGone.png',
       imgSizeSt: '1rem',
@@ -80,7 +80,7 @@ const skills = [
    },
    {
       name: 'FireBall',
-      damage: 13,
+      damage: 10,
       imgStart: 'FireBall.gif',
       imgEnd: 'FireBallGone.gif',
       imgSizeSt: '1.8rem',
@@ -88,9 +88,17 @@ const skills = [
    },
    {
       name: 'PurpleBall',
-      damage: 17,
+      damage: 20,
       imgStart: 'PurpleBall.gif',
       imgEnd: 'PurpleEnd1.gif',
+      imgSizeSt: '1.8rem',
+      imgSizeEn: '2rem'
+   },
+   {
+      name: 'GreenBall',
+      damage: 15,
+      imgStart: 'GreenBall.gif',
+      imgEnd: 'GreenEnd.gif',
       imgSizeSt: '1.8rem',
       imgSizeEn: '2rem'
    }
