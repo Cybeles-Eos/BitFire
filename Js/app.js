@@ -235,9 +235,9 @@ function userShot(){
 
    // Time For UserApp To Atck Button 🎫
    setTimeout(()=>{
-      if (navigator.vibrate) {
-         navigator.vibrate(200);
-      }
+      // if (navigator.vibrate) {
+      //    navigator.vibrate(200);
+      // }
       atckBtn.style.opacity = 1;
       atckBtn.addEventListener('click', userShot);
       atckBtn.classList.remove('turnEnd');
