@@ -85,6 +85,14 @@ const skills = [
       imgEnd: 'FireBallGone.gif',
       imgSizeSt: '1.8rem',
       imgSizeEn: '2rem'
+   },
+   {
+      name: 'PurpleBall',
+      damage: 17,
+      imgStart: 'PurpleBall.gif',
+      imgEnd: 'PurpleEnd1.gif',
+      imgSizeSt: '1.8rem',
+      imgSizeEn: '2rem'
    }
 ];
 
