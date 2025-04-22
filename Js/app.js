@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
          }
    
          charSkill.src = `Images/${skill.imgEnd}`;
-         charSkill.style.width = skill.imgSizeEn; // For SkillEnd Size
+         charSkill.style.width = skill.imgSizeEn; 
    
          setTimeout(()=>{
             charSkill.src = '';
