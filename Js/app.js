@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
    
       // BulletHit
       setTimeout(()=>{
-         if(!gameEnded && charHp > 0){ // Check if game is not ended and character has HP
+         // Check if game is not ended and character has HP
+         if(!gameEnded && charHp > 0){ 
             hitSound.play();
             hitSound.volume = .4;
          } else {
