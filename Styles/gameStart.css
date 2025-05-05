@@ -13,7 +13,6 @@
    background-repeat: no-repeat;
    z-index: 1;
    transition: all 1s;
-   /* display: none;  */
 }
 .starGame{
    transform: translateY(-14.5rem);
