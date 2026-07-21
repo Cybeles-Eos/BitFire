@@ -53,11 +53,54 @@ main{
    -webkit-tap-highlight-color: transparent;
    -webkit-user-drag: none; 
 }
+.hpWrapper{
+   position: relative;
+   top: -7px;
+}
+.hpText{
+   position: absolute;
+   top: -14px;
+   font-family: poppin;
+   font-size: 10px;
+   font-weight: 700;
+   color: #fff;
+   text-shadow: 1px 1px 0 #1d2026, -1px -1px 0 #1d2026, 1px -1px 0 #1d2026, -1px 1px 0 #1d2026;
+   pointer-events: none;
+   white-space: nowrap;
+}
+.characterUser .hpText{
+   left: 0;
+}
+.characterEnemy .hpText{
+   right: 0;
+}
+.damagePopup{
+   position: absolute;
+   top: 2rem;
+   left: 50%;
+   transform: translateX(-50%);
+   font-family: alfa;
+   font-size: 1.4rem;
+   color: rgb(233, 68, 68);
+   text-shadow: 2px 2px 0 #1d2026;
+   pointer-events: none;
+   z-index: 10;
+   animation: damageFloat 900ms ease-out forwards;
+}
+@keyframes damageFloat {
+   0%{
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+   }
+   100%{
+      opacity: 0;
+      transform: translateX(-50%) translateY(-2.5rem);
+   }
+}
 .uniHpBar{
    width: 100px;
    height: 12px;
    position: relative;
-   top: -7px;
    border: 1px solid #1d2026; 
    display: flex;
 }
@@ -121,7 +164,7 @@ main{
    left: 6px !important;
 }
 .userHp{
-   width: 90%; 
+   width: 100%; 
    background-color: rgb(233, 68, 68);
    box-shadow: inset 0px 0px 7px rgb(0, 0, 0);
 } 
@@ -168,7 +211,7 @@ main{
    right: 6px !important;
 }
 .enemyHp{
-   width: 90%;
+   width: 100%;
    background-color: rgb(233, 68, 68);
    box-shadow: inset 0px 0px 7px rgb(0, 0, 0);
 } 

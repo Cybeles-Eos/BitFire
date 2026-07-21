@@ -55,8 +55,28 @@ document.addEventListener('DOMContentLoaded', function() {
    // Character Hp :
    const virtualUserHp = document.querySelector('.userHp');
    const virtualEnemyHp = document.querySelector('.enemyHp');
-   let userHp = 90;
-   let enemyHp = 90;
+   const userHpText = document.querySelector('.userHpText');
+   const enemyHpText = document.querySelector('.enemyHpText');
+   const MAX_HP = 100;
+   let userHp = MAX_HP;
+   let enemyHp = MAX_HP;
+
+   function updateHpDisplay(){
+      virtualUserHp.style.width = `${userHp}%`;
+      virtualEnemyHp.style.width = `${enemyHp}%`;
+      userHpText.textContent = userHp;
+      enemyHpText.textContent = enemyHp;
+   }
+
+   function showDamageNumber(container, damage){
+      const popup = document.createElement('span');
+      popup.className = 'damagePopup';
+      popup.textContent = `-${damage}`;
+      container.appendChild(popup);
+      setTimeout(() => popup.remove(), 900);
+   }
+
+   updateHpDisplay();
    
    // Score
    const virtualWinCount = document.getElementById('winCount');
@@ -167,8 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // User Hit The Enemy
       setTimeout(()=>{
-         enemyHp -= skills[userIndex].damage;
-         virtualEnemyHp.style.width = `${enemyHp}%`;
+         if(gameEnded) return;
+
+         const damage = skills[userIndex].damage;
+         enemyHp = Math.max(0, enemyHp - damage);
+         updateHpDisplay();
+         showDamageNumber(enemycharContainer, damage);
    
          if(enemyHp <= 0){
             gameEnded = true; // Mark the game as ended
@@ -177,17 +201,16 @@ document.addEventListener('DOMContentLoaded', function() {
             updateScore();
             enemycharContainer.style.display = 'none';
             atckBtn.style.display = "none";
-            userHp = 90;
+            userHp = MAX_HP;
    
             document.querySelector('.win-box').classList.add('activatePopup');
             document.querySelector('.win-box').addEventListener('click', ()=>{
                sBtnsound();
                setTimeout(()=>{
                   gameEnded = false; // Reset game state
-                  userHp = 90;
-                  enemyHp = 90;
-                  virtualEnemyHp.style.width = `${enemyHp}%`;
-                  virtualUserHp.style.width = `${userHp}%`;
+                  userHp = MAX_HP;
+                  enemyHp = MAX_HP;
+                  updateHpDisplay();
                   
                   enemycharContainer.style.display = 'block';
                   atckBtn.style.display = "block";
@@ -204,8 +227,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Enemy Hit The User
       setTimeout(()=>{
-         userHp -= skills[enemyIndex].damage;
-         virtualUserHp.style.width = `${userHp}%`;
+         if(gameEnded) return;
+
+         const damage = skills[enemyIndex].damage;
+         userHp = Math.max(0, userHp - damage);
+         updateHpDisplay();
+         showDamageNumber(usercharContainer, damage);
    
          if(userHp <= 0){
             gameEnded = true; // Mark the game as ended
@@ -214,17 +241,16 @@ document.addEventListener('DOMContentLoaded', function() {
             updateScore();
             usercharContainer.style.display = 'none';
             atckBtn.style.display = "none";
-            enemyHp = 90;
+            enemyHp = MAX_HP;
             
             document.querySelector('.lose-box').classList.add('activatePopup');
             document.querySelector('.lose-box').addEventListener('click', ()=>{
                sBtnsound();
                setTimeout(()=>{
                   gameEnded = false; // Reset game state
-                  userHp = 90;
-                  enemyHp = 90;
-                  virtualEnemyHp.style.width = `${enemyHp}%`;
-                  virtualUserHp.style.width = `${userHp}%`;
+                  userHp = MAX_HP;
+                  enemyHp = MAX_HP;
+                  updateHpDisplay();
    
                   usercharContainer.style.display = 'block';
                   atckBtn.style.display = "block";
